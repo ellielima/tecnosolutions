@@ -19,6 +19,8 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'TecnoSolutions — Sistema de Gestión',
   description: 'Plataforma empresarial para gestión de clientes, proyectos y tareas',
+  manifest: '/manifest.json',
+  themeColor: '#6366f1',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
