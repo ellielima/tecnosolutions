@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand:    #6366f1;
+  --brand-dark: #4f46e5;
+  --surface-900: #0f172a;
+  --surface-800: #1e293b;
+  --surface-700: #334155;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-geist), system-ui, sans-serif;
+  background: var(--surface-900);
+  color: #f1f5f9;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: #1e293b; }
+::-webkit-scrollbar-thumb  { background: #334155; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Cards */
+.card {
+  @apply bg-surface-800 border border-surface-700 rounded-2xl;
+}
+
+/* Inputs */
+.input {
+  @apply w-full bg-surface-700 border border-surface-600 rounded-xl px-4 py-2.5
+         text-surface-100 placeholder-surface-400 text-sm
+         focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+         transition-all duration-200;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-brand-500 hover:bg-brand-600 text-white font-semibold
+         px-5 py-2.5 rounded-xl transition-all duration-200
+         active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-surface-700 hover:bg-surface-600 text-surface-100
+         px-5 py-2.5 rounded-xl transition-all duration-200
+         border border-surface-600 font-medium;
+}
+
+.btn-danger {
+  @apply bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30
+         px-5 py-2.5 rounded-xl transition-all duration-200 font-medium;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+}
+
+/* Table */
+.table-wrapper {
+  @apply overflow-x-auto rounded-xl border border-surface-700;
+}
+
+table { @apply w-full text-sm; }
+thead tr { @apply bg-surface-700/50; }
+thead th { @apply px-4 py-3 text-left text-surface-400 font-semibold text-xs uppercase tracking-wider; }
+tbody tr { @apply border-t border-surface-700 hover:bg-surface-700/30 transition-colors; }
+tbody td { @apply px-4 py-3 text-surface-200; }
+
+/* Animations */
+.animate-fade-in { animation: fadeIn .25s ease-out; }
+.animate-slide-up { animation: slideUp .3s ease-out; }
+
+@keyframes fadeIn  { from { opacity: 0 }             to { opacity: 1 } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: translateY(0) } }
