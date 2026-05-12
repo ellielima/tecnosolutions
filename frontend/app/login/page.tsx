@@ -140,10 +140,10 @@ export default function LoginPage() {
                 </button>
               </form>
 
-              <button onClick={() => setMode('forgot')}
+              {/*button onClick={() => setMode('forgot')}
                       className="w-full text-center text-sm text-brand-400 hover:text-brand-300 mt-4 transition-colors">
                 ¿Olvidaste tu contraseña?
-              </button>
+              </button*/}
             </>
           )}
 
