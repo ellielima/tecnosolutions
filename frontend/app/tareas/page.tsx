@@ -386,7 +386,7 @@ export default function TareasPage() {
                 <label className="block text-xs font-medium text-surface-400 mb-1">Responsable</label>
                 <select value={editing.responsable_id || ''} onChange={e => setEditing({ ...editing, responsable_id: e.target.value })} className="input text-sm">
                   <option value="">Sin asignar</option>
-                  {usuarios.map(u => <option key={u.id} value={u.id}>{u.nombre}</option>)}
+                  {usuarios.filter(u => u.activo).map(u => <option key={u.id} value={u.id}>{u.nombre}</option>)}
                 </select>
               </div>
               <div className="col-span-full">
